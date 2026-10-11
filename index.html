@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenkins Automation Server</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="navbar">
+        <div class="logo-container">
+            <div class="jenkins-gear">
+                <i class="fa-solid fa-gear"></i>
+                <i class="fa-solid fa-person-running butler"></i>
+            </div>
+            <h1>Jenkins<span>.</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pipeline">Pipeline Simulator</a></li>
+                <li><a href="#plugins">Plugins</a></li>
+                <li><a href="#community">Community</a></li>
+            </ul>
+        </nav>
+        <a href="#pipeline" class="btn-primary">Get Started</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge"><i class="fa-solid fa-bolt"></i> The Leading Open Source Automation Server</span>
+            <h2>Build great things at any scale</h2>
+            <p>The leading open source automation server, Jenkins provides hundreds of plugins to support building, deploying and automating any project.</p>
+            <div class="hero-buttons">
+                <a href="#pipeline" class="btn-primary"><i class="fa-solid fa-play"></i> Run Pipeline</a>
+                <a href="https://www.jenkins.io/doc/" target="_blank" class="btn-secondary"><i class="fa-solid fa-book"></i> Documentation</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="orbit-container">
+                <div class="central-node"><i class="fa-solid fa-server"></i></div>
+                <div class="orbit node-1"><i class="fa-brands fa-docker"></i></div>
+                <div class="orbit node-2"><i class="fa-brands fa-git-alt"></i></div>
+                <div class="orbit node-3"><i class="fa-solid fa-cubes"></i></div>
+                <div class="orbit node-4"><i class="fa-solid fa-shield-halved"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="section-title">
+            <h3>Why Jenkins?</h3>
+            <p>Designed for flexibility, extensibility, and seamless CI/CD workflows.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon-box"><i class="fa-solid fa-puzzle-piece"></i></div>
+                <h4>Continuous Integration</h4>
+                <p>Easily configure and integrate with various SCM and build tools, providing automated feedback loops.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-box"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
+                <h4>Pipelines as Code</h4>
+                <p>Define your entire delivery pipeline using code with Jenkinsfile, version-controlled right alongside your repository.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-box"><i class="fa-solid fa-network-wired"></i></div>
+                <h4>Distributed Builds</h4>
+                <p>Distribute build and test loads across multiple machines with distinct operating systems and environments.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-box"><i class="fa-solid fa-store"></i></div>
+                <h4>1,800+ Plugins</h4>
+                <p>Extend Jenkins to adapt to virtually any project type, integrating with cloud providers, testing tools, and notification systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Pipeline Simulator -->
+    <section id="pipeline" class="pipeline-section">
+        <div class="section-title">
+            <h3>Live Pipeline Simulator</h3>
+            <p>Experience how Jenkins orchestrates build, test, and deploy workflows in real time.</p>
+        </div>
+        <div class="pipeline-container">
+            <div class="pipeline-stages">
+                <div class="stage" id="stage-scm">
+                    <i class="fa-solid fa-code-branch"></i>
+                    <span>Checkout SCM</span>
+                    <div class="status-indicator"></div>
+                </div>
+                <div class="stage-connector"></div>
+                <div class="stage" id="stage-build">
+                    <i class="fa-solid fa-hammer"></i>
+                    <span>Build Artifacts</span>
+                    <div class="status-indicator"></div>
+                </div>
+                <div class="stage-connector"></div>
+                <div class="stage" id="stage-test">
+                    <i class="fa-solid fa-vial"></i>
+                    <span>Unit Tests</span>
+                    <div class="status-indicator"></div>
+                </div>
+                <div class="stage-connector"></div>
+                <div class="stage" id="stage-deploy">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <span>Deploy to Prod</span>
+                    <div class="status-indicator"></div>
+                </div>
+            </div>
+
+            <div class="simulator-controls">
+                <button id="startPipelineBtn" class="btn-primary"><i class="fa-solid fa-play"></i> Trigger Build #42</button>
+                <button id="resetPipelineBtn" class="btn-secondary"><i class="fa-solid fa-rotate-right"></i> Reset</button>
+            </div>
+
+            <div class="console-output">
+                <div class="console-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="console-title">Console Output - Build #42</span>
+                </div>
+                <div class="console-body" id="consoleLogs">
+                    <span class="log-info">[Jenkins] Started by user administrator</span>
+                    <span class="log-info">[Pipeline] Click 'Trigger Build #42' to start simulation...</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fa-solid fa-gear"></i>
+                <span>Jenkins Automation Server</span>
+            </div>
+            <p>&copy; 2026 Jenkins Project. Open source software licensed under the MIT License.</p>
+            <div class="social-links">
+                <a href="https://github.com/jenkinsci" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://twitter.com/jenkinsci" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.jenkins.io" target="_blank"><i class="fa-solid fa-globe"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const startBtn = document.getElementById('startPipelineBtn');
+        const resetBtn = document.getElementById('resetPipelineBtn');
+        const consoleLogs = document.getElementById('consoleLogs');
+        const stages = ['scm', 'build', 'test', 'deploy'];
+
+        function addLog(text, type = 'info') {
+            const span = document.createElement('span');
+            span.className = `log-${type}`;
+            span.textContent = text;
+            consoleLogs.appendChild(span);
+            consoleLogs.scrollTop = consoleLogs.scrollHeight;
+        }
+
+        async function runPipeline() {
+            startBtn.disabled = true;
+            consoleLogs.innerHTML = '<span class="log-info">[Jenkins] Started Build #42...</span>\n';
+
+            for (let i = 0; i < stages.length; i++) {
+                const stageId = stages[i];
+                const stageEl = document.getElementById(`stage-${stageId}`);
+                
+                stageEl.classList.add('running');
+                addLog(`[Pipeline] Running stage: ${stageEl.querySelector('span').textContent}...`, 'running');
+                
+                await new Promise(resolve => setTimeout(resolve, 1200));
+
+                stageEl.classList.remove('running');
+                stageEl.classList.add('success');
+                addLog(`[Pipeline] Success: ${stageEl.querySelector('span').textContent} completed successfully.`, 'success');
+            }
+
+            addLog('[Jenkins] Finished: SUCCESS. Build #42 completed successfully!', 'success');
+            startBtn.disabled = false;
+        }
+
+        function resetPipeline() {
+            startBtn.disabled = false;
+            stages.forEach(stageId => {
+                const stageEl = document.getElementById(`stage-${stageId}`);
+                stageEl.classList.remove('running', 'success');
+            });
+            consoleLogs.innerHTML = '<span class="log-info">[Jenkins] Pipeline reset. Ready for next build.</span>';
+        }
+
+        startBtn.addEventListener('click', runPipeline);
+        resetBtn.addEventListener('click', resetPipeline);
+    </script>
+</body>
+</html>
